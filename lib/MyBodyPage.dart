@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sizer/sizer.dart';
 
 class MyBodyPage extends StatefulWidget {
   @override
@@ -11,36 +12,49 @@ class _MyBodyPageState extends State<MyBodyPage> {
   @override
   Widget build(BuildContext context) {
     return Container(
+      height: MediaQuery.of(context).size.height,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
+        //mainAxisSize: MainAxisSize.min,
+        //mainAxisAlignment: MainAxisAlignment.start,
         children: <Widget>[
-          Image(
-            image: AssetImage('images/pixeltrue.png'),
+          Center(
+            child: Image(
+              //height: MediaQuery.of(context).size.height * 0.25,
+              //width: 350,
+              //fit: BoxFit.fill,
+              height: 30.h,
+              image: AssetImage(
+                'images/pixeltrue.png',
+              ),
+            ),
           ),
           Container(
+            //height: 15.h,
+            //height: 34,
             margin: EdgeInsets.only(left: 20),
             child: Text(
               'Login',
               style: TextStyle(
                   fontFamily: 'Poppins',
-                  fontSize: 30,
+                  fontSize: 25,
                   color: Colors.white,
                   fontWeight: FontWeight.bold),
             ),
           ),
           SizedBox(
-            height: 20,
+            height: 12,
           ),
           Container(
             margin: EdgeInsets.only(left: 20),
             child: Text(
               'Please sign in to continue.',
               style: TextStyle(
-                  fontSize: 17, color: Colors.grey, fontFamily: 'Poppins'),
+                  fontSize: 15, color: Colors.grey, fontFamily: 'Poppins'),
             ),
           ),
           SizedBox(
-            height: 40,
+            height: 25,
           ),
           TextField(
             obscureText: false,
@@ -53,7 +67,7 @@ class _MyBodyPageState extends State<MyBodyPage> {
                     borderRadius: BorderRadius.circular(25.0))),
           ),
           SizedBox(
-            height: 30,
+            height: 10,
           ),
           TextField(
             obscureText: false,
@@ -66,19 +80,23 @@ class _MyBodyPageState extends State<MyBodyPage> {
                     borderRadius: BorderRadius.circular(25.0))),
           ),
           SizedBox(
-            height: 15,
+            height: 2.9.h,
           ),
           Container(
-              margin: EdgeInsets.only(left: 60),
+              height: 10.h,
+              alignment: Alignment.center,
               child: Material(
                 elevation: 5.0,
                 borderRadius: BorderRadius.circular(30.0),
                 color: Color(0xff01A0C7),
-                child: MaterialButton(
+                child: FlatButton(
                   minWidth: 250.0,
-                  height: 70,
-                  padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
-                  onPressed: () {},
+                  //height: 3.h,
+                  //padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
+                  onPressed: () {
+                    //..
+                    print('Login Tap');
+                  },
                   child: Text("LOGIN",
                       textAlign: TextAlign.center,
                       style: TextStyle(
@@ -89,16 +107,22 @@ class _MyBodyPageState extends State<MyBodyPage> {
                 ),
               )),
           Center(
-              child: Text('Forgot Password?',
-                  style: TextStyle(
-                      color: Colors.deepOrange[400],
-                      fontFamily: 'Poppins',
-                      fontSize: 15))),
+              child: TextButton(
+            onPressed: () {
+              //..
+              print('You forgot password');
+            },
+            child: Text('Forgot Password?',
+                style: TextStyle(
+                    color: Colors.deepOrange[400],
+                    fontFamily: 'Poppins',
+                    fontSize: 15)),
+          )),
           SizedBox(
-            height: 39,
+            height: 0.5.h,
           ),
           Center(
-              child: Text('Don\'t have an account, Sign up',
+              child: Text('Don\'t have an account? Sign up!',
                   style: TextStyle(
                       color: Colors.deepOrange[400],
                       fontFamily: 'Poppins',
