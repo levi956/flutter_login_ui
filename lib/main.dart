@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_project_1/MyBodyPage.dart';
+import 'package:flutter_project_1/views/login_view.dart';
 import 'package:sizer/sizer.dart';
 
 void main() {
@@ -15,23 +15,10 @@ class MyApp extends StatelessWidget {
         return MaterialApp(
           theme: ThemeData(primaryColor: Colors.indigo[800]),
           debugShowCheckedModeBanner: false,
-          title: 'Flutter Project 1',
-          home: MyHomePage(),
+          title: 'DEMO LOGIN PAGE',
+          home: LoginView(),
         );
       },
-    );
-  }
-}
-
-class MyHomePage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        resizeToAvoidBottomInset: false,
-        backgroundColor: Colors.indigo[900],
-        body: MyBodyPage(),
-      ),
     );
   }
 }
